@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@sidebase/nuxt-auth": "^0.4.4",
+    "@sidebase/nuxt-auth": "^0.5.0-rc.0",
     "nuxt": "^3.3.2"
   }
 }

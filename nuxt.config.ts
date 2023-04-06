@@ -9,4 +9,11 @@ export default defineNuxtConfig({
       GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     },
   },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })

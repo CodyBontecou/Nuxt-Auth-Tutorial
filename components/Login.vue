@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { data: providers } = await useFetch('/api/auth/providers')
+</script>
+
 <template>
   <section>
     <div
@@ -13,6 +17,12 @@
           >
             Welcome back
           </h1>
+
+          <!-- <pre>{{ providers }}</pre> -->
+
+          <div v-for="provider in providers" :key="provider.id">
+            {{ provider.name }}
+          </div>
 
           <GithubLogin />
 

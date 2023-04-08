@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { signOut } = useAuth()
+const { signOut, status } = useAuth()
+
+const loggedIn = computed(() => status.value === 'authenticated')
 </script>
 
 <template>
@@ -54,11 +56,13 @@ const { signOut } = useAuth()
 
           <li>
             <button
+              v-if="loggedIn"
               class="block py-2 pl-3 pr-4 md:bg-transparent md:hover:text-primary-700 md:p-0 dark:text-white md:dark:text-primary-500"
               @click="signOut()"
             >
               Sign out
             </button>
+            <GithubLogin v-else />
           </li>
         </ul>
       </div>

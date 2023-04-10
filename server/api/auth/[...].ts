@@ -18,8 +18,8 @@ export default NuxtAuthHandler({
     }),
     // @ts-expect-error You need to use .default here for it to work during SSR. May be fixed via Vite at some point
     TwitchProvider.default({
-      clientId: runtimeConfig.public.GITHUB_CLIENT_ID,
-      clientSecret: runtimeConfig.GITHUB_CLIENT_SECRET,
+      clientId: runtimeConfig.public.TWITCH_CLIENT_ID,
+      clientSecret: runtimeConfig.TWITCH_CLIENT_SECRET,
     }),
   ],
 })

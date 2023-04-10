@@ -18,13 +18,13 @@ const { data: providers } = await useFetch('/api/auth/providers')
             Welcome back
           </h1>
 
-          <!-- <pre>{{ providers }}</pre> -->
-
-          <div v-for="provider in providers" :key="provider.id">
-            {{ provider.name }}
+          <div class="flex justify-between">
+            <ProviderLogin
+              v-for="provider in providers"
+              :key="provider.id"
+              :provider-name="provider.name"
+            />
           </div>
-
-          <GithubLogin />
 
           <div class="flex items-center">
             <div class="bg-gray-500 h-[.125rem] w-full"></div>

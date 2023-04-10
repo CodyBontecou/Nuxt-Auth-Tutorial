@@ -62,7 +62,7 @@ const loggedIn = computed(() => status.value === 'authenticated')
             >
               Sign out
             </button>
-            <GithubLogin v-else />
+            <NuxtLink v-else to="/login">Login</NuxtLink>
           </li>
         </ul>
       </div>

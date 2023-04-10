@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { data: providers } = await useFetch('/api/auth/providers')
+</script>
+
 <template>
   <section>
     <div
@@ -14,7 +18,13 @@
             Welcome back
           </h1>
 
-          <GithubLogin />
+          <div class="flex justify-between">
+            <ProviderLogin
+              v-for="provider in providers"
+              :key="provider.id"
+              :provider-name="provider.name"
+            />
+          </div>
 
           <div class="flex items-center">
             <div class="bg-gray-500 h-[.125rem] w-full"></div>
